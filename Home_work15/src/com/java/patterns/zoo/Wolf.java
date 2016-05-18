@@ -8,4 +8,9 @@ public class Wolf extends Zoo {
         setColor(color);
         setWeight(weight);
     }
+
+    public void makeAnimal(){
+        System.out.println("─┌┐\uF04B");
+
+    }
 }

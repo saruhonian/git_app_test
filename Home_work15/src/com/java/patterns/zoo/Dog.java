@@ -8,4 +8,9 @@ public class Dog extends Zoo {
         setColor(color);
         setWeight(weight);
     }
+
+    public void makeAnimal(){
+        System.out.println("┌┐\uF04A");
+
+    }
 }

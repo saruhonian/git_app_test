@@ -1,7 +1,7 @@
 package com.java.patterns.zoo;
 
 public class ZooFactory {
-    public Zoo zooFactory(String typeAnimal) {
+    public Zoo makeZooFactory(String typeAnimal) {
         Zoo zoo;
         switch (typeAnimal){
             case "cat":

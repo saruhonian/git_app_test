@@ -8,4 +8,9 @@ public class Parrot extends Zoo {
         setColor(color);
         setWeight(weight);
     }
+
+    public void makeAnimal(){
+        System.out.println("\uF04E");
+
+    }
 }

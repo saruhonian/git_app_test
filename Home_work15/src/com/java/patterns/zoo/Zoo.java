@@ -48,12 +48,12 @@ public class Zoo {
     }
 
     public void makeAnimal(){
-        if () {
-            System.out.println();
-        }
-        else {
-            System.out.println("");
-        }
-
+                    System.out.println();
     }
+
+    public void makeAnimalTS() {
+        System.out.print("Made model " + name + ", " + "his ege " + age + " years.");
+        System.out.println(" His bread is " + breed + " and weight is " + weight + ". It is " + color + ". His color is " + color);
+    }
+
 }
