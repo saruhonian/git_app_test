@@ -29,9 +29,18 @@ public class Board {
     }
 
     public boolean gameFinished() {
-        if (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') {
-            return true;
+        for (int y = 0; y < 3; y++) {
+            if (board[y][0] == 'X' && board[y][1] == 'X' && board[y][2] == 'X') {
+                return true;
+            }
         }
+        for (int x = 0; x < 3; x++) {
+
+            if (board[0][x] == 'X' && board[1][x] == 'X' && board[2][x] == 'X') {
+                return true;
+            }
+        }
+
         return false;
     }
 
