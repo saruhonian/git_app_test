@@ -59,10 +59,7 @@ public class Board {
     }
 
     private boolean isMoveValid(int x, int y) {
-        if (x > 2 || y > 2 || x < 0 || y < 0) {
-            return false;
-        }
-        if ( != 0 ) {
+        if (x > 2 || y > 2 || x < 0 || y < 0 || board[x][y] == 'X' || board[x][y] == 'O') {
             return false;
         }
         return true;
