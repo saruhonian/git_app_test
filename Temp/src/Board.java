@@ -41,6 +41,18 @@ public class Board {
             }
         }
 
+        for (int y = 0; y < 3; y++) {
+            if (board[y][0] == 'O' && board[y][1] == 'O' && board[y][2] == 'O') {
+                return true;
+            }
+        }
+        for (int x = 0; x < 3; x++) {
+
+            if (board[0][x] == 'O' && board[1][x] == 'O' && board[2][x] == 'O') {
+                return true;
+            }
+        }
+
         return false;
     }
 
