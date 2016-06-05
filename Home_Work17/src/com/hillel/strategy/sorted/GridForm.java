@@ -17,7 +17,6 @@ public class GridForm extends JPanel{
         GridBagConstraints gc = new GridBagConstraints();
 
         JButton button1 = new JButton("Sorting");
-        //.fill = GridBagConstraints.PAGE_START;
         button1.setPreferredSize(dimension);
 
         gc.gridx = 0;

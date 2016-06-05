@@ -5,14 +5,14 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class MainForm extends JFrame {
+
+
     private JTextArea textArea;
     private JButton button;
+    private int[] array;
 
-   private void arrayStr(int[] array) {
-        String arraystr = Integer.toString(sorting);
-
-    }
 
     public MainForm() {
         super("Sorting ARRAY");
@@ -34,11 +34,11 @@ public class MainForm extends JFrame {
 
         Dimension textAreaSize = textArea.getPreferredSize();
         Dimension buttonSize = button.getPreferredSize();
-       // System.out.println(textAreaSize.width + ":" + textAreaSize.height);
+        // System.out.println(textAreaSize.width + ":" + textAreaSize.height);
 
         textAreaSize.width = 300;
         textAreaSize.height = 100;
-       // buttonSize.width = 300;
+        // buttonSize.width = 300;
         buttonSize.height = 50;
         textArea.setPreferredSize(textAreaSize);
         button.setPreferredSize(buttonSize);
@@ -49,10 +49,14 @@ public class MainForm extends JFrame {
 
 
         button.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 Sorting sorting = new Sorting(new InsertionSort());
-                textArea.append();
+
+                String str = sorting.sort(array);
+                textArea.append(str);
 
                 //String str = textArea.getName();
                 //JOptionPane.showMessageDialog(null, str);
