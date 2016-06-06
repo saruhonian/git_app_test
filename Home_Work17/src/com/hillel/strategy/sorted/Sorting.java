@@ -13,7 +13,7 @@ public class Sorting {
         strategy.sotr(array);
         String tmp;
         for (int i = 0; i < array.length; i++) {
-            tmp = String.valueOf(array[i]);
+             tmp = String.valueOf(array[i]);
             sortSt += tmp;
         }
         return sortSt;

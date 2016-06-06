@@ -8,13 +8,21 @@ import java.awt.event.ActionListener;
 
 public class MainForm extends JFrame {
 
+    int[] array;
+    public MainForm(int[] array) {
+        this.array = array;
+    }
+
+
 
     private JTextArea textArea;
     private JButton button;
-    private int[] array;
+
 
 
     public MainForm() {
+
+
         super("Sorting ARRAY");
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screen = toolkit.getScreenSize();
@@ -34,11 +42,11 @@ public class MainForm extends JFrame {
 
         Dimension textAreaSize = textArea.getPreferredSize();
         Dimension buttonSize = button.getPreferredSize();
-        // System.out.println(textAreaSize.width + ":" + textAreaSize.height);
+       // System.out.println(textAreaSize.width + ":" + textAreaSize.height);
 
         textAreaSize.width = 300;
         textAreaSize.height = 100;
-        // buttonSize.width = 300;
+       // buttonSize.width = 300;
         buttonSize.height = 50;
         textArea.setPreferredSize(textAreaSize);
         button.setPreferredSize(buttonSize);
@@ -53,9 +61,12 @@ public class MainForm extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
+
                 Sorting sorting = new Sorting(new InsertionSort());
 
-                String str = sorting.sort(array);
+                String str = String.valueOf(sorting);
+                //textArea.append(String.valueOf(sorting));
                 textArea.append(str);
 
                 //String str = textArea.getName();
