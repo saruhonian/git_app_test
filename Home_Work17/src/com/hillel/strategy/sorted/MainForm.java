@@ -9,9 +9,9 @@ import java.awt.event.ActionListener;
 public class MainForm extends JFrame {
 
     int[] array;
-    public MainForm(int[] array) {
-        this.array = array;
-    }
+  //  public MainForm(int[] array) {
+   //     this.array = array;
+    //}
 
 
 
@@ -20,10 +20,10 @@ public class MainForm extends JFrame {
 
 
 
-    public MainForm() {
-
+    public MainForm(int[] array) {
 
         super("Sorting ARRAY");
+        this.array = array;
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screen = toolkit.getScreenSize();
         int x = screen.width;
@@ -64,8 +64,9 @@ public class MainForm extends JFrame {
 
 
                 Sorting sorting = new Sorting(new InsertionSort());
+                String str = sorting.sort(array);
 
-                String str = String.valueOf(sorting);
+                //String str = String.valueOf(sorting);
                 //textArea.append(String.valueOf(sorting));
                 textArea.append(str);
 
