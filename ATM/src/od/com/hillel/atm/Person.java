@@ -1,17 +1,45 @@
 package od.com.hillel.atm;
 
 public class Person {
-    private int money;
+    private int id;
+    private String firstName;
+    private String lastName;
+    public int money;
 
-    public void money(int getMoneyATM) {
-        this.money = getMoneyATM;
+    public int getId() {
+        return id;
     }
 
-    public boolean insertCard() {
-        if (Card){
-        return true;
+    public void setId(int id) {
+        this.id = id;
     }
-        return false;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void initializedCard() {
+        System.out.println();
     }
 }
 

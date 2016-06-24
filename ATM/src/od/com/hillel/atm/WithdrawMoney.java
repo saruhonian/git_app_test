@@ -1,4 +1,5 @@
 package od.com.hillel.atm;
+
 /*  2.3.2. Если снятие нал.
 2.3.2.1. Ввод суммы снятия
         2.3.2.1.1. 50грн
@@ -15,23 +16,29 @@ package od.com.hillel.atm;
 
         */
 public class WithdrawMoney {
-
-    public int moneyATM;
+    public int totalMoneyATM;
     public int getMoneyATM;
 
-    public int set_GetMoneyATM(int getMoneyATM, int moneyATM){
+
+    public int getMoneyATM(int getMoney) {
+        int temp = totalMoneyATM - getMoney;
+        return getMoney;
+    }
+
+
+    public void withdrawMoney(int getMoneyATM, int totalMoneyATM) {
         this.getMoneyATM = getMoneyATM;
-        this.moneyATM = moneyATM;
-        return getMoneyATM;
+        this.totalMoneyATM = totalMoneyATM;
     }
 
-    public void chekMoneyOnAccount() {
+    public void checkMoneyOnAccount() {
+
 
     }
 
-    public void chekMoheyInATM() throws InsufficientFundsExeption {    // 2.3.2.3. Проверка наличных в АТМ
-        if (getMoneyATM > moneyATM) {
-            throw new InsufficientFundsExeption("No money in ATM!");
+    public void checkMoneyInATM() throws InsufficientFundsException {    // 2.3.2.3. Проверка наличных в АТМ
+        if (totalMoneyATM < getMoneyATM) {
+            throw new InsufficientFundsException("No money in ATM!");
         }
     }
 

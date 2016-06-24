@@ -7,22 +7,20 @@ package od.com.hillel.atm;
  */
 
 public class ATM {
-    public int moneyATM;
-    public int getMoneyATM;
+    public int totalMoneyATM = 200000;
+
 
     private final static int FIFTY_GRYVIEN = 50;
     private final static int ONE_HUNDRED_GRYVIEN = 100;
     private final static int TWO_HUNDRED_GRYVIEN = 200;
     private final static int FIVE_HUNDRED_GRYVIEN = 500;
 
-    public int getMoneyATM() {
-        return moneyATM;
-    }
+
 
     public void setMoneyATM(int moneyATM) {
-        this.moneyATM = moneyATM;
+        this.totalMoneyATM = moneyATM;
     }
-
+/*
     public int getGetMoneyATM() {
         return getMoneyATM;
     }
@@ -31,6 +29,6 @@ public class ATM {
         this.getMoneyATM = getMoneyATM;
     }
 
-
+*/
 
 }
