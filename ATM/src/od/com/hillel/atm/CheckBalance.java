@@ -1,26 +1,26 @@
 package od.com.hillel.atm;
 
-/*
-2.3.3. Если проверка баланса тогда
-	2.3.3.1. Проверка баланса счёта
-	2.3.3.1.1. Печать на квитанцию
-	2.3.3.1.2. Отобразить на экране
- */
 
+import java.util.Date;
 
 public class CheckBalance {
- private int money;
+/*
+    private int money;
 
+    private void checkBalance(int money) {
+        this.money = money;
+    }
+*/
 
-    public boolean checkAccount(){
+    public boolean checkAccount() {
         return true;
     }
 
 
-    public void printTicket(){
-        System.out.println("You have " + " money!");
+    public void printTicket(int money) {
+        Date date = new Date();
+        System.out.println("You have " + money + " money! Date is " + date);
     }
-
 
 
 }

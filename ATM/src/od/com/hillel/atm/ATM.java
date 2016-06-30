@@ -6,29 +6,34 @@ package od.com.hillel.atm;
 	2.3. Выбор функции (снятие/ проверка счёта)
  */
 
+
+import java.util.Scanner;
+
 public class ATM {
+    int idCard = 0;
     public int totalMoneyATM = 200000;
+    private static ATM instance = null;
 
 
-    private final static int FIFTY_GRYVIEN = 50;
-    private final static int ONE_HUNDRED_GRYVIEN = 100;
-    private final static int TWO_HUNDRED_GRYVIEN = 200;
-    private final static int FIVE_HUNDRED_GRYVIEN = 500;
+    public static ATM getInstance() {
+        if (ATM.instance == null) {
+            ATM.instance = new ATM();
+        }
+        return ATM.instance;
+    }
 
-
-
+    public void insertCard() throws InsufficientFundsException {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter yor ID card: ");
+        int idCard = scanner.nextInt();
+        PersonFactory personFactory = new PersonFactory();
+        Person person = personFactory.identificationPerson(idCard);
+       MainMenuATM mainMenuATM = MainMenuATM.getInstance(person);
+        mainMenuATM.chooseFunction();
+    }
+/*
     public void setMoneyATM(int moneyATM) {
         this.totalMoneyATM = moneyATM;
     }
-/*
-    public int getGetMoneyATM() {
-        return getMoneyATM;
-    }
-
-    public void setGetMoneyATM(int getMoneyATM) {
-        this.getMoneyATM = getMoneyATM;
-    }
-
 */
-
 }
