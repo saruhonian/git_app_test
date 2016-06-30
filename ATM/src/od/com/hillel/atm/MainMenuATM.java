@@ -44,7 +44,7 @@ public class MainMenuATM {
 
     public void withdrawMoney() throws InsufficientFundsException {
         if (checkBalance.checkAccount()) {
-            WithdrawMoney withdrawMoney = new WithdrawMoney(totalMoneyATM, person.money);
+            WithdrawMoney withdrawMoney = new WithdrawMoney(totalMoneyATM, person.money, checkBalance);
             if (withdrawMoney.checkMoneyInATM())
                 withdrawMoney.withdraw();
 

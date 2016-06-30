@@ -22,10 +22,11 @@ public class WithdrawMoney {
     }
 
 
-    public WithdrawMoney(int totalMoneyATM, int money) {
+    public WithdrawMoney(int totalMoneyATM, int money, CheckBalance checkBalance) {
         this.getMoneyATM = getMoneyATM;
         this.totalMoneyATM = totalMoneyATM;
         this.money = money;
+        this.checkBalance = checkBalance;
     }
 
     public void checkMoneyOnAccount() {
