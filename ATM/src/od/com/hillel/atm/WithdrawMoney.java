@@ -6,15 +6,15 @@ import java.util.Scanner;
 public class WithdrawMoney {
     public int totalMoneyATM;
     public int getMoneyATM;
-  //  public int money;
+    public int money;
     MainMenuATM mainMenuATM;
     CheckBalance checkBalance;
     Person person;
-
-private void WithdrawMoney(int totalMoneyATM){
-    this.totalMoneyATM = totalMoneyATM;
-}
-
+/*
+    private void WithdrawMoney(int totalMoneyATM){
+        this.totalMoneyATM = totalMoneyATM;
+    }
+*/
 
     public int getMoneyATM(int getMoney) {
         int temp = totalMoneyATM - getMoney;
@@ -22,10 +22,10 @@ private void WithdrawMoney(int totalMoneyATM){
     }
 
 
-    public void WithdrawMoney(int getMoneyATM, int totalMoneyATM, int money) {
+    public WithdrawMoney(int totalMoneyATM, int money) {
         this.getMoneyATM = getMoneyATM;
         this.totalMoneyATM = totalMoneyATM;
-       // this.money = money;
+        this.money = money;
     }
 
     public void checkMoneyOnAccount() {
@@ -76,12 +76,12 @@ private void WithdrawMoney(int totalMoneyATM){
 
     public void withdrawCash(int getMoneyATM) {
         totalMoneyATM = totalMoneyATM - getMoneyATM;
-        person.money = person.money - getMoneyATM;
-        checkBalance.printTicket(person.money);
+        money = money - getMoneyATM;
+        checkBalance.printTicket(money);
     }
 
     public boolean checkMoneyInATM() throws InsufficientFundsException {    // 2.3.2.3. Проверка наличных в АТМ
-        if (totalMoneyATM < getMoneyATM) {
+        if (totalMoneyATM < money) {
             throw new InsufficientFundsException("No money in ATM!");
         }
         return true;

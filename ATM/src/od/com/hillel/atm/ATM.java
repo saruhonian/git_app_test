@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class ATM {
     int idCard = 0;
-    public int totalMoneyATM = 200000;
+    //public int totalMoneyATM = 200000;
     private static ATM instance = null;
 
 

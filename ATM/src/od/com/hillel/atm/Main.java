@@ -8,8 +8,8 @@ public class Main {
         ATM atm = ATM.getInstance();
         atm.insertCard();
 
-        WithdrawMoney withdrawMoney = new WithdrawMoney();
-        withdrawMoney.getMoneyATM(3000);
+        //WithdrawMoney withdrawMoney = new WithdrawMoney();
+        //withdrawMoney.getMoneyATM(3000);
 
 
     }

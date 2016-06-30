@@ -4,8 +4,10 @@ import java.util.Scanner;
 
 public class MainMenuATM {
   //  private int money;
+  public int totalMoneyATM = 200000;
     private static MainMenuATM instance = null;
     Person person;
+    Money money;
 
     private MainMenuATM(Person person){
         this.person = person;
@@ -42,7 +44,7 @@ public class MainMenuATM {
 
     public void withdrawMoney() throws InsufficientFundsException {
         if (checkBalance.checkAccount()) {
-            WithdrawMoney withdrawMoney = new WithdrawMoney();
+            WithdrawMoney withdrawMoney = new WithdrawMoney(totalMoneyATM, person.money);
             if (withdrawMoney.checkMoneyInATM())
                 withdrawMoney.withdraw();
 
