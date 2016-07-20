@@ -24,7 +24,8 @@ import org.xml.sax.SAXException;
 
 public class ModifyXMLFile {
 
-    public static void main(String args[]) {
+   public void modifyFile() {
+    //public static void main(String args[]) {
         int numberDocumentNo = 1000;
         int documentDate = 20160713;
         String currentDatePayment = "13.07.16";
@@ -38,10 +39,11 @@ public class ModifyXMLFile {
         System.out.println(fullDate);
 
         try {
-            File filepath = new File("g:\\tmp\\Charitable help ALL.xml");
+            //File downloadFile = new File("Charitable help ALL.xml").getAbsoluteFile();
+            File downloadFile = new File("g:\\tmp\\Charitable help ALL.xml");
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-            Document doc = docBuilder.parse(filepath);
+            Document doc = docBuilder.parse(downloadFile);
 
             System.out.println(doc.getDocumentElement().getNodeName());
             doc.setXmlStandalone(true);
@@ -93,10 +95,11 @@ public class ModifyXMLFile {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File(String.valueOf(filepath)));
+            File uploadFile = new File("g:\\tmp\\Charitable help ALL new.xml");
+            //File uploadFile = new File("Charitable help ALL new.xml").getAbsoluteFile();
+            StreamResult result = new StreamResult(new File(String.valueOf(uploadFile)));
             transformer.setOutputProperty(OutputKeys.ENCODING, "windows-1251");
             transformer.transform(source, result);
-
 
             System.out.println("Done");
 
