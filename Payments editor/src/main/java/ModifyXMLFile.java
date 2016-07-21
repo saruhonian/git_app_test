@@ -58,9 +58,12 @@ public class ModifyXMLFile {
                 Node nodeAttrDocumentNo = attr.getNamedItem("DOCUMENTNO");
                 Node nodeAttrDocumentDate = attr.getNamedItem("DOCUMENTDATE");
                 Node nodeAttrDetailSofPayment = attr.getNamedItem("DETAILSOFPAYMENT");
-                Node nodeStateId = attr.getNamedItem("STATEID");
-                Node nodeStateName = attr.getNamedItem("StateName");
-                Node nodeCreateDate = attr.getNamedItem("CREATEDATE");
+                Node nodeAttrStateId = attr.getNamedItem("STATEID");
+                Node nodeAttrStateName = attr.getNamedItem("StateName");
+                Node nodeAttrCreateDate = attr.getNamedItem("CREATEDATE");
+
+                Node nodeAttrCorrIdentifyCode = attr.getNamedItem("CORRIDENTIFYCODE");
+                Node nodeAttrCorrAccountNo = attr.getNamedItem("CORRACCOUNTNO");
 
                 if (attr.getNamedItem("BOOKEDDATE") != null) {
                     attr.removeNamedItem("BOOKEDDATE");
@@ -80,9 +83,16 @@ public class ModifyXMLFile {
 
                 nodeAttrDocumentNo.setTextContent(String.valueOf(numberLine + numberDocumentNo));
                 nodeAttrDocumentDate.setTextContent(String.valueOf(documentDate));
-                nodeStateId.setTextContent("1009");
-                nodeStateName.setTextContent("На клиенте |Введен");
-                nodeCreateDate.setTextContent(fullDate);
+                nodeAttrStateId.setTextContent("1009");
+                nodeAttrStateName.setTextContent("На клиенте |Введен");
+                nodeAttrCreateDate.setTextContent(fullDate);
+
+                String intNodeAttrCorrIdentifyCode = nodeAttrCorrIdentifyCode.getTextContent();
+                int intAttrCorrIdentifyCode = Integer.parseInt(intNodeAttrCorrIdentifyCode);
+                int intAttrCorrAccountNo = Integer.parseInt(nodeAttrCorrAccountNo.getTextContent());
+
+
+
 
 
                 String textDetailSofPayment = nodeAttrDetailSofPayment.getTextContent();
@@ -90,6 +100,8 @@ public class ModifyXMLFile {
                 String secondPartOfTheText = textDetailSofPayment.substring(46, textDetailSofPayment.length() - 1);
                 String insertingText = firstPartOfTheText + currentDatePayment + secondPartOfTheText;
                 nodeAttrDetailSofPayment.setTextContent(insertingText);
+
+
             }
 
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
